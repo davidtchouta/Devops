@@ -1,0 +1,32 @@
+---
+- name: Install and configure Nginx
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Ensure Nginx is installed
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Ensure Nginx is running and enabled on boot
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Copy Nginx configuration file
+      copy:
+        src: /path/to/local/nginx.conf
+        dest: /etc/nginx/nginx.conf
+        mode: '0644'
+
+    - name: Test Nginx configuration
+      command: nginx -t
+      ignore_errors: true
+
+    - name: Reload Nginx
+      service:
+        name: nginx
+        state: reloaded
