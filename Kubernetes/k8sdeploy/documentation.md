@@ -21,15 +21,14 @@
 3. **Deploy Kubernetes Dashboard**
 
    Apply the recommended Kubernetes Dashboard deployment YAML file from the official Kubernetes repository.
-   `kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
-   `
+
+   `kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml`
 
 4. **Create Admin User**
 
    Create a YAML file named dashboard-adminuser.yaml with the following content to define an admin user for the dashboard:
 
-   ```
-apiVersion: v1
+```apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: admin-user
@@ -69,8 +68,8 @@ subjects:
    
    Open your web browser and navigate to the following URL to access the Kubernetes Dashboard:
 
-   `http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
-`
+   ```http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+   ``` 
 
 
 
