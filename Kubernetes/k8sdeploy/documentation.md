@@ -16,13 +16,17 @@
    ```
 2. **Verify Kubernetes Pods**
 
-   `kubectl get pod -A`
+   ```bash
+   kubectl get pod -A
+   ```
 
 3. **Deploy Kubernetes Dashboard**
 
    Apply the recommended Kubernetes Dashboard deployment YAML file from the official Kubernetes repository.
 
-   `kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml`
+   ```bash
+   kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+   ```
 
 4. **Create Admin User**
 
@@ -50,25 +54,31 @@ subjects:
 
 **Apply the admin user configuration to your cluster.**
 
-   `kubectl apply -f dashboard-adminuser.yaml`
+   ```bash
+   kubectl apply -f dashboard-adminuser.yaml
+   ```
 
 5. **Generate Access Token**
 
    Generate an access token for the admin user. This token will be used to log in to the Kubernetes Dashboard.
 
-   `kubectl -n kubernetes-dashboard create token admin-user`
+   ```bash
+   kubectl -n kubernetes-dashboard create token admin-user
+   ```
 
 6. **Start Kubernetes Proxy**
 
    Start the Kubernetes proxy to access the dashboard from your local machine.
 
-   `kubectl proxy`
+   ```bash
+   kubectl proxy
+   ```
 
 7. **Access the Kubernetes Dashboard**
    
    Open your web browser and navigate to the following URL to access the Kubernetes Dashboard:
 
-   ```
+   ```bash
    http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
    ``` 
 
