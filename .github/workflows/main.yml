@@ -4,10 +4,10 @@ name: Hello World Workflow
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 # Job definitions
 jobs:
