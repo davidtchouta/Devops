@@ -43,10 +43,7 @@ Now create a `.gitlab-ci.yml` file. It is a YAML file where you specify instruct
 
    **New file**
 
-4. For the Filename, type `.gitlab-ci.yml` and in the larger window, paste this sample code below. This example shows four jobs: `build-job`, `test-job1`, `test-job2`, and `deploy-prod`. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables `$GITLAB_USER_LOGIN` and `$CI_COMMIT_BRANCH` are populated when the jobs run.
-
-**Select Commit changes**
-The pipeline starts and runs the jobs you defined in the .`gitlab-ci.yml` file.
+4. For the Filename, type `.gitlab-ci.yml` and in the larger window, paste this sample code :
 
 ```  yaml
 # Job de build
@@ -76,3 +73,9 @@ deploy-prod:
     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
   environment: production
 
+```
+This example shows four jobs: `build-job`, `test-job1`, `test-job2`, and `deploy-prod`. The comments listed in the echo commands are displayed in the UI when you view the jobs. The values for the predefined variables `$GITLAB_USER_LOGIN` and `$CI_COMMIT_BRANCH` are populated when the jobs run.
+
+**Select Commit changes**
+
+The pipeline starts and runs the jobs you defined in the .`gitlab-ci.yml` file.
