@@ -24,4 +24,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Print Hello World
-        run: echo "Hello, World! from London"
+        run: echo "Hello, World! from Lebanon"
