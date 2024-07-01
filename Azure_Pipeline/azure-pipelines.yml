@@ -1,0 +1,15 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+#- script: echo "Hello, World!"
+- script: python hi.py
+  displayName: 'Print Hello World'
+
+- script: echo "Today is very sunny !!!"
+  displayName: 'Print the weather day'
+
+
